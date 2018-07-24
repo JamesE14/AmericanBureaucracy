@@ -1,11 +1,14 @@
 package pro.jamesegger.americanbureaucracy;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity
+{
+
+	List<MyModel> jsonFileScannedIn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 	{
 		super.onStart();
 
-		localFileReading readSomePolitics = new localFileReading(this);
+		localFileReading readSomePolitics = new localFileReading();
+		jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
+
+		//Log.e("appdebug", "json file output: "+jsonFileScannedIn.get(0).senAndRepterms.size());
 	}
 }

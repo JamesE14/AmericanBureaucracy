@@ -26,12 +26,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation group: 'com.esotericsoftware.yamlbeans', name: 'yamlbeans', version: '1.13'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.8.5'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.5'
     compile 'com.snatik:storage:2.1.0'
-    //compile 'com.github.bmoliveira:snake-yaml:v1.18-android'
     compile 'com.google.code.gson:gson:2.8.5'
+
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.3'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3'
 
 
 }
