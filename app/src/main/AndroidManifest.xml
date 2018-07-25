@@ -17,7 +17,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.executiveRelated"
+            android:label="Executive Branch"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity">
+        </activity>
+
+
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.judicialRelated"
+            android:label="Judicial Branch"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.legislativeRelated"
+            android:label="Legislative Branch"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity" >
+        </activity>
+
     </application>
 
 </manifest>

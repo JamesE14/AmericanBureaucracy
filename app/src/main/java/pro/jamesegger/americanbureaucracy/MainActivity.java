@@ -1,20 +1,31 @@
 package pro.jamesegger.americanbureaucracy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import java.util.List;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
 {
 
-	List<MyModel> jsonFileScannedIn;
+	//List<MyModel> jsonFileScannedIn;
+	Intent startLegislativeGUI;
+	Intent startExecutiveGUI;
+	Intent startJudicialGUI;
+	//private Bundle parsedJSONofCongress = new Bundle();
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		startLegislativeGUI = new Intent(MainActivity.this, legislativeRelated.class);
+		startExecutiveGUI = new Intent(MainActivity.this, executiveRelated.class);
+		startJudicialGUI = new Intent(MainActivity.this, judicialRelated.class);
+
 	}
 
 	@Override
@@ -22,9 +33,23 @@ public class MainActivity extends AppCompatActivity
 	{
 		super.onStart();
 
-		localFileReading readSomePolitics = new localFileReading();
-		jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
+		//localFileReading readSomePolitics = new localFileReading();
+		//jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
 
-		//Log.e("appdebug", "json file output: "+jsonFileScannedIn.get(0).senAndRepterms.size());
+	}
+
+	public void on_Click_Go_Executive(View view)
+	{
+		MainActivity.this.startActivity(startExecutiveGUI);
+	}
+
+	public void on_Click_Go_Judicial(View view)
+	{
+		MainActivity.this.startActivity(startJudicialGUI);
+	}
+
+	public void on_Click_Go_Legislative(View view)
+	{
+		MainActivity.this.startActivity(startLegislativeGUI);
 	}
 }

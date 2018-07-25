@@ -3,7 +3,7 @@ package pro.jamesegger.americanbureaucracy;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-public class executiveRelated extends FragmentActivity
+public class judicialRelated extends FragmentActivity
 {
 
 	@Override
@@ -17,6 +17,4 @@ public class executiveRelated extends FragmentActivity
 	{
 		super.onStart();
 	}
-
-
 }
