@@ -8,12 +8,9 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity
 {
 
-	//List<MyModel> jsonFileScannedIn;
 	Intent startLegislativeGUI;
 	Intent startExecutiveGUI;
 	Intent startJudicialGUI;
-	//private Bundle parsedJSONofCongress = new Bundle();
-
 
 
 	@Override
@@ -32,9 +29,6 @@ public class MainActivity extends AppCompatActivity
 	protected void onStart()
 	{
 		super.onStart();
-
-		//localFileReading readSomePolitics = new localFileReading();
-		//jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
 
 	}
 
