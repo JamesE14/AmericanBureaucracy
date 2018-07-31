@@ -7,75 +7,147 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_red_light">
 
-    <ImageView
-        android:id="@+id/legLogo"
-        android:layout_width="98dp"
-        android:layout_height="81dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/congressicon" />
-
     <TableLayout
-        android:id="@+id/mainTable"
+        android:id="@+id/mainTableRepresentatives"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="388dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|fill_vertical|center_horizontal|fill_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_weight="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="0">
 
         <TableRow
             android:id="@+id/table1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table8"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table9"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
 
         <TableRow
             android:id="@+id/table10"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="0dp"
+            android:layout_marginBottom="-20dp"
+            android:paddingVertical="0dp" />
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/mainTableSenators"
+        android:layout_width="0dp"
+        android:layout_height="176dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|fill_vertical|center_horizontal|fill_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/table1Sen"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="-20dp"
             android:layout_height="wrap_content" />
+
+        <TableRow
+            android:id="@+id/table2Sen"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="-20dp"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:id="@+id/table3Sen"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="-20dp"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:id="@+id/table4Sen"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="-20dp"
+            android:layout_height="wrap_content" />
+
     </TableLayout>
 
 
