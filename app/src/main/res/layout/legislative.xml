@@ -8,9 +8,67 @@
     android:background="#babaad">
 
 
+    <Button
+        android:id="@+id/buttonHouse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/mouse_memoirs"
+        android:onClick="on_Click_Go_House"
+        android:text="HOUSE"
+        android:textAlignment="center"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/blackDivider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSenate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/mouse_memoirs"
+        android:onClick="on_Click_Go_Senate"
+        android:text="SENATE"
+        android:textAlignment="center"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blackDivider1" />
+
+    <ImageView
+        android:id="@+id/blackDivider1"
+        android:layout_width="4dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/blackDivider2"
+        android:layout_width="4dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:color/black" />
+
     <ImageView
         android:id="@+id/blueHouseBackground"
-        android:layout_width="200dp"
+        android:layout_width="185dp"
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +76,7 @@
 
     <ImageView
         android:id="@+id/blueSenateBackground"
-        android:layout_width="200dp"
+        android:layout_width="185dp"
         android:layout_height="130dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -58,123 +116,81 @@
 
     <TextView
         android:id="@+id/demSen"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Democrat"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/blueSenateBackground"
+        app:layout_constraintEnd_toStartOf="@+id/yellowSenateBackground"
+        app:layout_constraintStart_toStartOf="@+id/blueSenateBackground"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/repSen"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Republican"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/redSenateBackground"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/yellowSenateBackground"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/otherSen"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Other"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/demSen" />
+        app:layout_constraintBottom_toBottomOf="@+id/blackDivider1"
+        app:layout_constraintEnd_toStartOf="@+id/repSen"
+        app:layout_constraintStart_toEndOf="@+id/demSen"
+        app:layout_constraintTop_toTopOf="@+id/blackDivider1" />
 
     <TextView
         android:id="@+id/demRep"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="144dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Democrat"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/yellowHouseBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/blueHouseBackground" />
 
     <TextView
         android:id="@+id/otherRep"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Other"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/repRep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/repRep"
+        app:layout_constraintStart_toStartOf="@+id/yellowHouseBackground"
+        app:layout_constraintTop_toTopOf="@+id/blackDivider2" />
 
     <TextView
         android:id="@+id/repRep"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="148dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/mouse_memoirs"
         android:text="Republican"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginBottom="64dp"
-        android:layout_marginEnd="64dp"
-        android:fontFamily="@font/mouse_memoirs"
-        android:text="House"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/repRep"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/mouse_memoirs"
-        android:text="Senate"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/demSen" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/yellowHouseBackground"
+        app:layout_constraintTop_toTopOf="@+id/redHouseBackground" />
 
 </android.support.constraint.ConstraintLayout>

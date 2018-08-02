@@ -1,10 +1,11 @@
 package pro.jamesegger.americanbureaucracy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,10 +30,16 @@ public class legislativeRelated extends AppCompatActivity
 	TextView otherRep;
 	TextView repRep;
 
+	Button theHouseButton;
+	Button theSenateButton;
+
 	int totalReps=0;
 	int totalSen=0;
 
 	int width=0;
+
+	Intent houseView;
+	Intent senateView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -58,9 +65,15 @@ public class legislativeRelated extends AppCompatActivity
 		 otherRep= findViewById(R.id.otherRep);
 		 repRep= findViewById(R.id.repRep);
 
+		theHouseButton = findViewById(R.id.buttonHouse);
+		theSenateButton = findViewById(R.id.buttonSenate);
+
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 		width = displayMetrics.widthPixels;
+
+		houseView = new Intent(legislativeRelated.this, houseRelated.class);
+		senateView = new Intent(legislativeRelated.this, senateRelated.class);
 
 	}
 
@@ -139,65 +152,84 @@ public class legislativeRelated extends AppCompatActivity
 		if((int)newDemensionsForHouseDem!=0)
 		{
 			blueHouseBackgroundSolid.setVisibility(View.VISIBLE);
+			demRep.setVisibility(View.VISIBLE);
+
 
 		}
 		else{
 			blueHouseBackgroundSolid.setVisibility(View.INVISIBLE);
+
+			demRep.setVisibility(View.INVISIBLE);
 
 		}
 
 		if((int)newDemensionsForHouseOther!=0)
 		{
 			yellowHouseBackgroundSolid.setVisibility(View.VISIBLE);
+			otherRep.setVisibility(View.VISIBLE);
+
 
 		}
 		else
 		{
 			yellowHouseBackgroundSolid.setVisibility(View.INVISIBLE);
+			otherRep.setVisibility(View.INVISIBLE);
 
 		}
 
 		if((int)newDemensionsForHouseRep!=0)
 		{
 			redHouseBackgroundSolid.setVisibility(View.VISIBLE);
+			repRep.setVisibility(View.VISIBLE);
+
 
 		}
 		else
 		{
 			redHouseBackgroundSolid.setVisibility(View.INVISIBLE);
+			repRep.setVisibility(View.INVISIBLE);
 
 		}
 
 		if((int)newDemensionsForSenateDem!=0)
 		{
 			blueSenateBackgroundSolid.setVisibility(View.VISIBLE);
+			demSen.setVisibility(View.VISIBLE);
+
 
 		}
 		else
 		{
 			blueSenateBackgroundSolid.setVisibility(View.INVISIBLE);
+			demSen.setVisibility(View.INVISIBLE);
 
 		}
 
 		if((int)newDemensionsForSenateOther!=0)
 		{
 			yellowSenateBackgroundSolid.setVisibility(View.VISIBLE);
+			otherSen.setVisibility(View.VISIBLE);
+
 
 		}
 
 		else{
 			yellowSenateBackgroundSolid.setVisibility(View.INVISIBLE);
+			otherSen.setVisibility(View.INVISIBLE);
 
 		}
 
 		if((int)newDemensionsForSenateRep!=0)
 		{
 			redSenateBackgroundSolid.setVisibility(View.VISIBLE);
+			repSen.setVisibility(View.VISIBLE);
+
 		}
 
 		else
 		{
 			redSenateBackgroundSolid.setVisibility(View.INVISIBLE);
+			repSen.setVisibility(View.INVISIBLE);
 
 		}
 
@@ -220,4 +252,14 @@ public class legislativeRelated extends AppCompatActivity
 		otherSen.setText("Other: " +Integer.toString(otherSens));
 
     }
+
+	public void on_Click_Go_Senate(View view)
+	{
+		legislativeRelated.this.startActivity(senateView);
+	}
+
+	public void on_Click_Go_House(View view)
+	{
+		legislativeRelated.this.startActivity(houseView);
+	}
 }

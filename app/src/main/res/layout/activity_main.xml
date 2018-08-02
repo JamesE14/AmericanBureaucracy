@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/americanwavepaint"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -16,6 +16,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
+        android:cropToPadding="false"
+        android:elevation="0dp"
+        android:fadingEdgeLength="5dp"
         android:onClick="on_Click_Go_Judicial"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/imageButton8"
@@ -31,7 +34,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:adjustViewBounds="false"
         android:background="@android:color/transparent"
+        android:cropToPadding="false"
         android:onClick="on_Click_Go_Executive"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"

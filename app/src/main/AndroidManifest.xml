@@ -36,6 +36,16 @@
             android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity" >
         </activity>
 
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.houseRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
+        </activity>
+
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.senateRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
