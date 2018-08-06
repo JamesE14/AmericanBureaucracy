@@ -53,7 +53,7 @@ public class legislatordetailsclass extends AppCompatActivity
 		partyAffiliation = findViewById(R.id.legislatorParty);
 		stateAffiliation = findViewById(R.id.legislatorState);
 		gender = findViewById(R.id.legislatorGender);
-		birthday = findViewById(R.id.legislatorState);
+		birthday = findViewById(R.id.legislatorBirthday);
 
 	}
 
