@@ -1,8 +1,8 @@
 package pro.jamesegger.americanbureaucracy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +15,7 @@ import java.util.List;
 public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonParsing.ViewHolder>
 {
 	    private List<MyModel> dataSetRecieved = new ArrayList<MyModel>();
+		private Context context;
 
 
 		public static class ViewHolder extends RecyclerView.ViewHolder
@@ -33,9 +34,10 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 		}
 
 		// Provide a suitable constructor (depends on the kind of dataset)
-		public adapterForjsonParsing(List<MyModel> myDataset)
+		public adapterForjsonParsing(Context context,List<MyModel> myDataset)
 		{
 			dataSetRecieved = myDataset;
+			this.context = context;
 		}
 
 		// Create new views (invoked by the layout manager)
@@ -52,7 +54,7 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 
 		// Replace the contents of a view (invoked by the layout manager)
 		@Override
-		public void onBindViewHolder(adapterForjsonParsing.ViewHolder holder, int position)
+		public void onBindViewHolder(adapterForjsonParsing.ViewHolder holder, final int position)
 		{
 			final String firstName = dataSetRecieved.get(position).first;
 			final String lastName = dataSetRecieved.get(position).last;
@@ -61,9 +63,12 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 			legislatorButton.setText(firstName +" "+lastName);
 
 			legislatorButton.setOnClickListener(new View.OnClickListener() {
+				@Override
 				public void onClick(View v) {
-					launchActivityForLegislator newListenerLeg = new launchActivityForLegislator();
-					newListenerLeg.launchActivityForLegislator(firstName,lastName);
+					Intent intent = new Intent(context, legislatordetailsclass.class);
+					intent.putExtra("FirstName", firstName);
+					intent.putExtra("LastName", lastName);
+					context.startActivity(intent);
 				}
 			});
 
@@ -90,16 +95,6 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 		{
 			return dataSetRecieved.size();
 		}
-}
-
-class launchActivityForLegislator extends AppCompatActivity
-{
-	void launchActivityForLegislator(String firstName, String lastName)
-	{
-		Intent houseRepView = new Intent(launchActivityForLegislator.this, legislatordetailsclass.class);
-		houseRepView.putExtra("FirstName",firstName);
-		houseRepView.putExtra("LastName", lastName);
-		launchActivityForLegislator.this.startActivity(houseRepView);
-	}
 
 }
+

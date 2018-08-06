@@ -49,7 +49,7 @@ public class senateRelated extends AppCompatActivity
 		theSenateRecycler.setLayoutManager(mLayoutManager);
 
 		// specify an adapter (see also next example)
-		mAdapter = new adapterForjsonParsing(senateMembersOnly);
+		mAdapter = new adapterForjsonParsing(this,senateMembersOnly);
 		theSenateRecycler.setAdapter(mAdapter);
 	}
 

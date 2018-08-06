@@ -10,8 +10,13 @@ public class legislatordetailsclass extends AppCompatActivity
 {
 
 	List<MyModel> jsonFileScannedIn;
-	List<MyModel> theWantedLegislator;
+	MyModel theWantedLegislator;
 	TextView legislatorMainTitle;
+	TextView partyAffiliation;
+	TextView gender;
+	TextView birthday;
+	TextView stateAffiliation;
+
 
 	String firstNameOfLegislator;
 	String lastNameOfLegislator;
@@ -21,7 +26,7 @@ public class legislatordetailsclass extends AppCompatActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.housedetails);
+		setContentView(R.layout.legislatordetails);
 
 		Bundle newExtras = getIntent().getExtras();
 
@@ -36,14 +41,19 @@ public class legislatordetailsclass extends AppCompatActivity
 		for (int findLegislator = 0; findLegislator < jsonFileScannedIn.size(); findLegislator++)
 		{
 
-			if (jsonFileScannedIn.get(findLegislator).first == firstNameOfLegislator & jsonFileScannedIn.get(findLegislator).last == lastNameOfLegislator)
+			if (jsonFileScannedIn.get(findLegislator).first.equals(firstNameOfLegislator) && jsonFileScannedIn.get(findLegislator).last.equals(lastNameOfLegislator))
 			{
-				theWantedLegislator.add(jsonFileScannedIn.get(findLegislator));
+				theWantedLegislator =jsonFileScannedIn.get(findLegislator);
+				break;
 			}
 		}
 
 
 		legislatorMainTitle = findViewById(R.id.legislatorTitle);
+		partyAffiliation = findViewById(R.id.legislatorParty);
+		stateAffiliation = findViewById(R.id.legislatorState);
+		gender = findViewById(R.id.legislatorGender);
+		birthday = findViewById(R.id.legislatorState);
 
 	}
 
@@ -51,7 +61,14 @@ public class legislatordetailsclass extends AppCompatActivity
 	protected void onStart()
 	{
 		super.onStart();
+
+		int mostRecentRole = theWantedLegislator.senAndRepterms.size();
+
 		legislatorMainTitle.setText(firstNameOfLegislator +" "+lastNameOfLegislator);
+		partyAffiliation.setText("Party: "+theWantedLegislator.senAndRepterms.get(mostRecentRole-1).party);
+		stateAffiliation.setText("State: "+ theWantedLegislator.senAndRepterms.get(mostRecentRole-1).state);
+		gender.setText("Gender: " + theWantedLegislator.gender);
+		birthday.setText("Birthday: "+ theWantedLegislator.birthday);
 	}
 
 }
