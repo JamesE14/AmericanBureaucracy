@@ -2,6 +2,7 @@ package pro.jamesegger.americanbureaucracy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,9 +18,7 @@ public class legislatordetailsclass extends AppCompatActivity
 	TextView birthday;
 	TextView stateAffiliation;
 
-
-	String firstNameOfLegislator;
-	String lastNameOfLegislator;
+	String fullNameOfLegislator;
 
 
 	@Override
@@ -34,14 +33,13 @@ public class legislatordetailsclass extends AppCompatActivity
 		localFileReading readSomePolitics = new localFileReading();
 		jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
 
-		firstNameOfLegislator =newExtras.getString("FirstName", "ERROR");
-		lastNameOfLegislator =newExtras.getString("LastName", "ERROR");
+		fullNameOfLegislator =newExtras.getString("FullName", "ERROR");
 
 
 		for (int findLegislator = 0; findLegislator < jsonFileScannedIn.size(); findLegislator++)
 		{
 
-			if (jsonFileScannedIn.get(findLegislator).first.equals(firstNameOfLegislator) && jsonFileScannedIn.get(findLegislator).last.equals(lastNameOfLegislator))
+			if (jsonFileScannedIn.get(findLegislator).fullName.equals(fullNameOfLegislator))
 			{
 				theWantedLegislator =jsonFileScannedIn.get(findLegislator);
 				break;
@@ -64,11 +62,26 @@ public class legislatordetailsclass extends AppCompatActivity
 
 		int mostRecentRole = theWantedLegislator.senAndRepterms.size();
 
-		legislatorMainTitle.setText(firstNameOfLegislator +" "+lastNameOfLegislator);
+		legislatorMainTitle.setText(fullNameOfLegislator);
 		partyAffiliation.setText("Party: "+theWantedLegislator.senAndRepterms.get(mostRecentRole-1).party);
 		stateAffiliation.setText("State: "+ theWantedLegislator.senAndRepterms.get(mostRecentRole-1).state);
 		gender.setText("Gender: " + theWantedLegislator.gender);
 		birthday.setText("Birthday: "+ theWantedLegislator.birthday);
+	}
+
+	public void launchWikiPage(View view)
+	{
+
+	}
+
+	public void launchNewsPage(View view)
+	{
+
+	}
+
+	public void launchPolitiFactsPage(View view)
+	{
+
 	}
 
 }

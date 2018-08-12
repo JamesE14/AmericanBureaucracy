@@ -1,15 +1,12 @@
 package pro.jamesegger.americanbureaucracy;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
 
 public class executiveRelated extends AppCompatActivity
 {
 
-    ImageView executiveLogo;
+   // ImageView executiveLogo;
 
 
     @Override
@@ -17,7 +14,7 @@ public class executiveRelated extends AppCompatActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.executive);
-        executiveLogo = findViewById(R.id.whLogo);
+       // executiveLogo = findViewById(R.id.whLogo);
 
     }
 
@@ -25,7 +22,7 @@ public class executiveRelated extends AppCompatActivity
 	{
 		super.onStart();
 
-        executiveLogo.setVisibility(View.VISIBLE);
+       // executiveLogo.setVisibility(View.VISIBLE);
 	}
 
 

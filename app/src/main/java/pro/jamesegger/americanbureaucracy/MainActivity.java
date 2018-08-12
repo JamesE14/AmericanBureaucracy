@@ -1,8 +1,13 @@
 package pro.jamesegger.americanbureaucracy;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity
@@ -30,6 +35,29 @@ public class MainActivity extends AppCompatActivity
 	{
 		super.onStart();
 
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
+		{
+
+			Log.e("NOOOOO", "NOT Granted!");
+
+			if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.INTERNET))
+			{
+
+			}
+
+			else
+			{
+					ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 1);
+			}
+
+			//onRequestPermissionsResult(1,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},);
+		}
+		else
+		{
+			Log.e("YAYYYY", "Granted!");
+
+			// Permission has already been granted
+		}
 	}
 
 	public void on_Click_Go_Executive(View view)
@@ -46,4 +74,5 @@ public class MainActivity extends AppCompatActivity
 	{
 		MainActivity.this.startActivity(startLegislativeGUI);
 	}
+
 }

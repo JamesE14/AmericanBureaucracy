@@ -16,18 +16,65 @@ public class localFileReading
 {
 	public List<MyModel> localFileReadingJSON(Context myContext)
 	{
+
+		/*
+		InputStream newGITdownload = new InputStream() {
+			@Override
+			public int read() throws IOException
+			{
+				return 0;
+			}
+		};
+
+
+		try
+		{
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+			newGITdownload = new URL("https://theunitedstates.io/congress-legislators/legislators-current.json").openStream();
+		}
+
+		catch (MalformedURLException e)
+		{
+			//
+		}
+		catch (IOException e)
+		{
+			//
+		}
+
+*/
 		try
 		{
 			InputStream input = myContext.getAssets().open("legislators-current.json");
+/*
+			boolean isTwoEqual = IOUtils.contentEquals(input, newGITdownload);
+
+			Log.e("are files equal", " "+isTwoEqual);
+
+			if (isTwoEqual)
+			{
+				return (readJsonStream(input));
+			}
+
+			else
+			{
+				return (readJsonStream(newGITdownload));
+			}
+			*/
 			return (readJsonStream(input));
 		}
 
-		catch(Exception e)
+		catch (Exception e)
 		{
-			Log.e("appDebug", "Error has occured: "+e);
+			Log.e("appDebug", "Error has occured: " + e);
 			return null;
 		}
+
+
 	}
+
+
 
 
 	public List<MyModel> readJsonStream(InputStream in) throws IOException
@@ -63,8 +110,9 @@ public class localFileReading
 
 	public MyModel readMessage(JsonReader reader) throws IOException
 	{
-		 nameStorage name = new nameStorage("First", "Last");
+		 nameStorage name = new nameStorage("First", "Last" , "FullName");
 		 bioStorage bio=new bioStorage("Birthday","Gender", "Religion");
+		idStorage idFromStorage = new idStorage("VoterSmartID", "WikipediaID", "WikiDataID");
 		List<termStorage> termsForRepAndSen = new ArrayList<termStorage>();
 
 
@@ -75,13 +123,16 @@ public class localFileReading
 			String aname = reader.nextName();
 
 
-			if(aname.equals("name") || aname.equals("bio"))
+			if(aname.equals("name") || aname.equals("bio") || aname.equals("id"))
 			{
 
 				if (aname.equals("name")) {
 					name = readName(reader);
 				} else if (aname.equals("bio")) {
 					bio = readBio(reader);
+				}
+				else if (aname.equals("id")) {
+					idFromStorage = readId(reader);
 				}
 			}
 
@@ -118,16 +169,46 @@ public class localFileReading
 
 		reader.endObject();
 
-		//Log.e("Person name", name.first +" : "+name.last);
+		return new MyModel(name,idFromStorage, bio, termsForRepAndSen);
+	}
 
+	public idStorage readId(JsonReader reader) throws IOException
+	{
+		String voteSmart = null;
+		String wikipedia = null;
+		String wikiData = null;
 
-		return new MyModel(name, bio, termsForRepAndSen);
+		reader.beginObject();
+
+		while (reader.hasNext()) {
+
+			String name = reader.nextName();
+
+			if (name.equals("votesmart")) {
+				voteSmart = reader.nextString();
+			}
+			else if (name.equals("wikipedia")) {
+				wikipedia = reader.nextString();
+			}
+			else if(name.equals("wikidata"))
+			{
+				wikiData = reader.nextString();
+			}
+			else {
+				reader.skipValue();
+			}
+		}
+
+		reader.endObject();
+
+		return new idStorage(voteSmart, wikipedia, wikiData);
 	}
 
 	public nameStorage readName(JsonReader reader) throws IOException
 	{
 		String first = null;
 		String last = null;
+		String full = null;
 
 		reader.beginObject();
 
@@ -137,16 +218,22 @@ public class localFileReading
 
 			if (name.equals("first")) {
 				first = reader.nextString();
-			} else if (name.equals("last")) {
+			}
+			else if (name.equals("last")) {
 				last = reader.nextString();
-			} else {
+			}
+			else if(name.equals("official_full"))
+			{
+				full = reader.nextString();
+			}
+			else {
 				reader.skipValue();
 			}
 		}
 
 		reader.endObject();
 
-		return new nameStorage(first, last);
+		return new nameStorage(first, last, full);
 	}
 
 	public bioStorage readBio(JsonReader reader) throws IOException

@@ -28,7 +28,6 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 			{
 				super(v);
 
-				//nameTextView = (TextView) itemView.findViewById(R.id.contact_name);
 				messageButton = (Button) itemView.findViewById(R.id.message_button);
 			}
 		}
@@ -56,18 +55,16 @@ public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonPa
 		@Override
 		public void onBindViewHolder(adapterForjsonParsing.ViewHolder holder, final int position)
 		{
-			final String firstName = dataSetRecieved.get(position).first;
-			final String lastName = dataSetRecieved.get(position).last;
+			final String fullName = dataSetRecieved.get(position).fullName;
 
 			Button legislatorButton = holder.messageButton;
-			legislatorButton.setText(firstName +" "+lastName);
+			legislatorButton.setText(fullName);
 
 			legislatorButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					Intent intent = new Intent(context, legislatordetailsclass.class);
-					intent.putExtra("FirstName", firstName);
-					intent.putExtra("LastName", lastName);
+					intent.putExtra("FullName", fullName);
 					context.startActivity(intent);
 				}
 			});

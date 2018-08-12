@@ -2,12 +2,10 @@ package pro.jamesegger.americanbureaucracy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
 
 public class judicialRelated extends AppCompatActivity
 {
-    ImageView judicialLogo;
+   // ImageView judicialLogo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -15,12 +13,12 @@ public class judicialRelated extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.judicial);
 
-		judicialLogo = findViewById(R.id.judLogo);
+		//judicialLogo = findViewById(R.id.judLogo);
 	}
 
 	protected void onStart()
 	{
 		super.onStart();
-		judicialLogo.setVisibility(View.VISIBLE);
+		//judicialLogo.setVisibility(View.VISIBLE);
 	}
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +17,14 @@ public class senateRelated extends AppCompatActivity
 	private RecyclerView theSenateRecycler;
 	private RecyclerView.Adapter mAdapter;
 	private RecyclerView.LayoutManager mLayoutManager;
+	private TextView congressTitleInView;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.senatedetails);
+		setContentView(R.layout.congressdetails);
 
 		localFileReading readSomePolitics = new localFileReading();
 		jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
@@ -39,6 +41,9 @@ public class senateRelated extends AppCompatActivity
 		}
 
 		theSenateRecycler= findViewById(R.id.senateRecycler);
+		congressTitleInView = findViewById(R.id.congressTitle);
+		congressTitleInView.setText(getResources().getString(R.string.senateRelatedTitle));
+
 
 		// use this setting to improve performance if you know that changes
 		// in content do not change the layout size of the RecyclerView
