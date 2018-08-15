@@ -66,7 +66,7 @@ public class legislatordetailsclass extends AppCompatActivity
 		partyAffiliation.setText("Party: "+theWantedLegislator.senAndRepterms.get(mostRecentRole-1).party);
 		stateAffiliation.setText("State: "+ theWantedLegislator.senAndRepterms.get(mostRecentRole-1).state);
 		gender.setText("Gender: " + theWantedLegislator.gender);
-		birthday.setText("Birthday: "+ theWantedLegislator.birthday);
+		//birthday.setText("Birthday: "+ theWantedLegislator.birthday);
 	}
 
 	public void launchWikiPage(View view)
@@ -74,7 +74,7 @@ public class legislatordetailsclass extends AppCompatActivity
 
 	}
 
-	public void launchNewsPage(View view)
+	public void launchVotingHistory(View view)
 	{
 
 	}

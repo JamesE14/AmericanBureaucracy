@@ -53,6 +53,11 @@
             android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
         </activity>
 
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.executiveSpecific"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.executiveRelated" >
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

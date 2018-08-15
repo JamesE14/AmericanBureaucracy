@@ -2,6 +2,37 @@
     <string name="app_name">American Bureaucracy</string>
     <string name="houseRelatedTitle">Representatives</string>
     <string name="senateRelatedTitle">Senators</string>
+    <string name="proPublicaApiKey">tHrTeT8mk8cEejBxip33CsEpIB1mXijmB82kh8t7</string>
+
+    #Heads of the Executive Departments
+    <string name="president">Donald John Trump</string>
+    <string name="vicePresident">Michael Richard Pence</string>
+    <string name="AttorneyGeneral">Jefferson Beauregard Sessions III</string>
+    <string name="SecretaryAgriculture">George Ervin Perdue III</string>
+    <string name="SecretaryCommerce">Wilbur Louis Ross Jr</string>
+    <string name="SecretaryDefense">James Norman Mattis</string>
+    <string name="SecretaryEducation">Elisabeth Dee DeVos</string>
+    <string name="SecretaryEnergy">James Richard Perry</string>
+    <string name="SecretaryHealthHumanServices">Alex Michael Azar II</string>
+    <string name="SecretaryHomelandSecurity">Kirstjen Michele Nielsen</string>
+    <string name="SecretaryHousingUrbanDevelopment">Benjamin Solomon Carson Sr</string>
+    <string name="SecretaryInterior">Ryan Keith Zinke</string>
+    <string name="SecretaryLabor">Rene Alexander Acosta</string>
+    <string name="SecretaryState">Michael Richard Pompeo</string>
+    <string name="SecretaryTransportation">Elaine Lan Chao</string>
+    <string name="SecretaryTreasury">Steven Terner Mnuchin</string>
+    <string name="SecretaryVeteransAffairs">Robert Leon Wilkie Jr</string>
+
+    #Cabinet-level officials
+    <string name="TradeRepresentative">Robert Emmet Lighthizer</string>
+    <string name="WhiteHouseChiefStaff">John Francis Kelly</string>
+    <string name="DirectorNationalIntelligence">Daniel Ray Coats</string>
+    <string name="DirectorCentralIntelligenceAgency">Gina Cheri Haspel</string>
+    <string name="DirectorOfficeManagementBudget">John Michael "Mick" Mulvaney</string>
+    <string name="RepresentativeUnitedStatesUnitedNations">Nimrata "Nikki" Haley</string>
+    <string name="AdministratorSmallBusinessAdministration">Linda Marie McMahon</string>
+    <string name="AdministratorEnvironmentalProtectionAgency">Andrew R. Wheeler</string>
+
 
 
 </resources>

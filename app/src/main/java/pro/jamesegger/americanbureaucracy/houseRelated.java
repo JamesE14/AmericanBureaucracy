@@ -39,7 +39,7 @@ public class houseRelated extends AppCompatActivity {
 		}
 
 
-		theHouseRecycler = findViewById(R.id.senateRecycler);
+  		theHouseRecycler = findViewById(R.id.senateRecycler);
 		congressTitleInView = findViewById(R.id.congressTitle);
 		congressTitleInView.setText(getResources().getString(R.string.houseRelatedTitle));
 

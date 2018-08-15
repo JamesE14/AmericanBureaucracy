@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
 		}
 		else
 		{
-			Log.e("YAYYYY", "Granted!");
+			//Log.e("YAYYYY", "Granted!");
 
 			// Permission has already been granted
 		}
