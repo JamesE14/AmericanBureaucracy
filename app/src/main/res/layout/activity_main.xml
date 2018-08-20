@@ -14,7 +14,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
         android:cropToPadding="false"
         android:elevation="0dp"
@@ -23,15 +23,16 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/imageButton8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/lawicon" />
 
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="190dp"
         android:layout_height="190dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:adjustViewBounds="false"
@@ -42,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/whitehouseiconnew" />
+        app:srcCompat="@drawable/whitehouseicon" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -50,7 +51,6 @@
         android:layout_height="190dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:adjustViewBounds="false"
         android:background="@android:color/transparent"
         android:cropToPadding="false"
@@ -59,6 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/congressicon" />
+        app:srcCompat="@drawable/statecapitalicon" />
 
 </android.support.constraint.ConstraintLayout>
