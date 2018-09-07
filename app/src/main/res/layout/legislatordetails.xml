@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/legislatorParty" />
 
     <TextView
-        android:id="@+id/legislatorBirthday"
+        android:id="@+id/BioIdDisplay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

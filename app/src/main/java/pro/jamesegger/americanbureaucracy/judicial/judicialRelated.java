@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.judicial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class judicialRelated extends AppCompatActivity
 {

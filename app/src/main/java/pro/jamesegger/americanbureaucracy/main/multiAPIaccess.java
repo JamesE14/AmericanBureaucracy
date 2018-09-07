@@ -1,10 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
-
-import android.util.Log;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
+package pro.jamesegger.americanbureaucracy.main;
 
 public class multiAPIaccess
 {

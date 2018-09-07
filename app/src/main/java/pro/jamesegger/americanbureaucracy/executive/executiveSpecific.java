@@ -1,8 +1,10 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.executive;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class executiveSpecific extends AppCompatActivity
 {

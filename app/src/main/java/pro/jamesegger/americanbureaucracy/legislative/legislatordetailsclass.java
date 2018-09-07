@@ -1,11 +1,14 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class legislatordetailsclass extends AppCompatActivity
 {
@@ -19,6 +22,9 @@ public class legislatordetailsclass extends AppCompatActivity
 	TextView stateAffiliation;
 
 	String fullNameOfLegislator;
+
+	Intent legislationVotes;
+
 
 
 	@Override
@@ -51,7 +57,10 @@ public class legislatordetailsclass extends AppCompatActivity
 		partyAffiliation = findViewById(R.id.legislatorParty);
 		stateAffiliation = findViewById(R.id.legislatorState);
 		gender = findViewById(R.id.legislatorGender);
-		birthday = findViewById(R.id.legislatorBirthday);
+		birthday = findViewById(R.id.BioIdDisplay);
+
+		legislationVotes = new Intent(legislatordetailsclass.this, congressMemberVotes.class);
+
 
 	}
 
@@ -66,7 +75,7 @@ public class legislatordetailsclass extends AppCompatActivity
 		partyAffiliation.setText("Party: "+theWantedLegislator.senAndRepterms.get(mostRecentRole-1).party);
 		stateAffiliation.setText("State: "+ theWantedLegislator.senAndRepterms.get(mostRecentRole-1).state);
 		gender.setText("Gender: " + theWantedLegislator.gender);
-		//birthday.setText("Birthday: "+ theWantedLegislator.birthday);
+		birthday.setText("Bio ID: "+ theWantedLegislator.bioGuide);
 	}
 
 	public void launchWikiPage(View view)
@@ -76,6 +85,8 @@ public class legislatordetailsclass extends AppCompatActivity
 
 	public void launchVotingHistory(View view)
 	{
+		legislationVotes.putExtra("BioId", theWantedLegislator.bioGuide);
+		legislatordetailsclass.this.startActivity(legislationVotes);
 
 	}
 

@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/congresssssiconnew_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,40 +23,46 @@
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.executiveRelated"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity">
+            android:name="pro.jamesegger.americanbureaucracy.executive.executiveRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.main.MainActivity">
         </activity>
 
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.judicialRelated"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity" >
+            android:name="pro.jamesegger.americanbureaucracy.judicial.judicialRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.main.MainActivity" >
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.legislativeRelated"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.MainActivity" >
+            android:name="pro.jamesegger.americanbureaucracy.legislative.legislativeRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.main.MainActivity" >
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.houseRelated"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
+            android:name="pro.jamesegger.americanbureaucracy.legislative.houseRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislative.legislativeRelated" >
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.senateRelated"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
+            android:name="pro.jamesegger.americanbureaucracy.legislative.senateRelated"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislative.legislativeRelated" >
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.legislatordetailsclass"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislativeRelated" >
+            android:name="pro.jamesegger.americanbureaucracy.legislative.legislatordetailsclass"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislative.legislativeRelated" >
         </activity>
 
         <activity
-            android:name="pro.jamesegger.americanbureaucracy.executiveSpecific"
-            android:parentActivityName="pro.jamesegger.americanbureaucracy.executiveRelated" >
+            android:name="pro.jamesegger.americanbureaucracy.executive.executiveSpecific"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.executive.executiveRelated" >
         </activity>
+
+        <activity
+            android:name="pro.jamesegger.americanbureaucracy.legislative.congressMemberVotes"
+            android:parentActivityName="pro.jamesegger.americanbureaucracy.legislative.legislatordetailsclass" >
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class legislativeRelated extends AppCompatActivity
 {

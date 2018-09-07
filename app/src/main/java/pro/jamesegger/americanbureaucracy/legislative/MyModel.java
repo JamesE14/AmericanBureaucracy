@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class MyModel
 
 	public String voterID;
 	public String wikiID;
-	public String wikiData;
+	public String bioGuide;
 
 	List<termStorage> senAndRepterms = new ArrayList<>();
 
@@ -26,7 +26,7 @@ public class MyModel
 
 		 voterID =idFromStorage.votesmartID;
 		 wikiID = idFromStorage.wikipediaID;
-		 wikiData = idFromStorage.wikidataID;
+		 bioGuide = idFromStorage.BioGuide;
 
 		 first = name.first;
 		 last = name.last;

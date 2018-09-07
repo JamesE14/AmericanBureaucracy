@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class adapterForjsonParsing extends RecyclerView.Adapter<adapterForjsonParsing.ViewHolder>
 {

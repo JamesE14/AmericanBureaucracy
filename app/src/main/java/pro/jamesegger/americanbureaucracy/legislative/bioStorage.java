@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 public class bioStorage {
 

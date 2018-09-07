@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.main;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,6 +9,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
+import pro.jamesegger.americanbureaucracy.R;
+import pro.jamesegger.americanbureaucracy.executive.executiveRelated;
+import pro.jamesegger.americanbureaucracy.judicial.judicialRelated;
+import pro.jamesegger.americanbureaucracy.legislative.legislativeRelated;
 
 public class MainActivity extends AppCompatActivity
 {

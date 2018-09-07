@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 import android.content.Context;
 import android.util.JsonReader;
@@ -112,7 +112,7 @@ public class localFileReading
 	{
 		 nameStorage name = new nameStorage("First", "Last" , "FullName");
 		 bioStorage bio=new bioStorage("Birthday","Gender", "Religion");
-		idStorage idFromStorage = new idStorage("VoterSmartID", "WikipediaID", "WikiDataID");
+		idStorage idFromStorage = new idStorage("VoterSmartID", "WikipediaID", "BioGuide");
 		List<termStorage> termsForRepAndSen = new ArrayList<termStorage>();
 
 
@@ -190,7 +190,7 @@ public class localFileReading
 			else if (name.equals("wikipedia")) {
 				wikipedia = reader.nextString();
 			}
-			else if(name.equals("wikidata"))
+			else if(name.equals("bioguide"))
 			{
 				wikiData = reader.nextString();
 			}

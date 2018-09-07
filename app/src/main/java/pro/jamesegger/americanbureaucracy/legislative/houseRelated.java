@@ -1,4 +1,4 @@
-package pro.jamesegger.americanbureaucracy;
+package pro.jamesegger.americanbureaucracy.legislative;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import pro.jamesegger.americanbureaucracy.R;
 
 public class houseRelated extends AppCompatActivity {
 
@@ -24,7 +26,7 @@ public class houseRelated extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.congressdetails);
+		setContentView(R.layout.congresslist);
 
 		localFileReading readSomePolitics = new localFileReading();
 		jsonFileScannedIn = readSomePolitics.localFileReadingJSON(this);
@@ -38,11 +40,9 @@ public class houseRelated extends AppCompatActivity {
 			}
 		}
 
-
-  		theHouseRecycler = findViewById(R.id.senateRecycler);
+		theHouseRecycler = findViewById(R.id.senateRecycler);
 		congressTitleInView = findViewById(R.id.congressTitle);
 		congressTitleInView.setText(getResources().getString(R.string.houseRelatedTitle));
-
 
 		// use this setting to improve performance if you know that changes
 		// in content do not change the layout size of the RecyclerView
@@ -55,7 +55,6 @@ public class houseRelated extends AppCompatActivity {
 		//Will display house members and allows for selection.
 		mAdapter = new adapterForjsonParsing(this, houseMembersOnly);
 		theHouseRecycler.setAdapter(mAdapter);
-
 	}
 
 }
